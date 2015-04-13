@@ -23,7 +23,7 @@ You have those levels to choose from:
 ## Add logs
 You can have multiple logs. When adding a new log entry simple use the last parameter to indicate the log name.
 
-To add a menu item to view your log, add more children to the **adminhtml.xml** file setting the name of your log as the last parameter of the URL
+To add a menu item to view your log, add more children to the **adminhtml.xml** file, setting the name of your log, as the last parameter of the URL
 
 **Example**
 ```xml
