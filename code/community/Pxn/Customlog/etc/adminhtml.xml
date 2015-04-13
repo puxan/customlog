@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<config>
+	<menu>
+		<customlog_menu translate="title" module="customlog">
+			<title>Custom Logs</title>
+			<sort_order>89</sort_order>
+			<children>
+				<customlog_main translate="title" module="customlog">
+					<title>View main log</title>
+					<action>customlog/customlog/view/name/main</action>
+					<sort_order>0</sort_order>
+				</customlog_main>
+			</children>
+		</customlog_menu>
+	</menu>
+</config>

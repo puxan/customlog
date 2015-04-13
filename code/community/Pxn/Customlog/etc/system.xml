@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <tabs>
+        <pxn translate="label" module="customlog">
+            <label>Pxn Extensions</label>
+            <sort_order>100</sort_order>
+        </pxn>
+    </tabs>
+    <sections>
+        <pxncustomlog translate="label" module="customlog">
+            <label>Custom logs</label>
+            <tab>pxn</tab>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+ 
+            <groups>
+                <pxn_autocleaning translate="label" module="customlog">
+                    <label>Automatic cleaning</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+ 
+                    <fields>
+	                    <pxn_active translate="label">
+                            <label>Enable cleaning</label>
+                            <comment>Delete old log entries</comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </pxn_active>
+                        <pxn_days translate="label">
+                            <label>Days to keep</label>
+                            <comment>Log entries older than the given number of days will be automatically deleted</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </pxn_days>
+                    </fields>
+                </pxn_autocleaning>
+            </groups>
+        </pxncustomlog>
+    </sections>
+</config>

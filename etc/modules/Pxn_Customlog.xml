@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Pxn_Customlog>
+			<active>true</active>
+			<codePool>community</codePool>
+		</Pxn_Customlog>
+	</modules>
+</config>
