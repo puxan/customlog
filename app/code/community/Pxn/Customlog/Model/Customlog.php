@@ -7,6 +7,7 @@ class Pxn_Customlog_Model_Customlog extends Mage_Core_Model_Abstract
 	const WARN = 1;
 	const INFO = 2;
 	const DEBUG = 3;
+	const NUM_LEVELS = 4;
 	const TABLE = 'pxn_customlog';
 
 	protected function _construct ()

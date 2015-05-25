@@ -16,6 +16,13 @@ class Pxn_Customlog_Block_Adminhtml_Renderer extends Mage_Adminhtml_Block_Widget
 			$value = Customlog::getLevelName ($value);
 		}
 
+		// Convert date to localtime
+		if ($this->getColumn ()->getIndex () == 'time')
+		{
+			$currentTimestamp = Mage::getModel('core/date')->timestamp(strtotime ($value));
+			$value = date('Y-m-d H:i:s', $currentTimestamp); 
+		}
+
 		// Apply specific color depending on the level
 		if ($row->getData ('level') == Customlog::ERROR)
 		{

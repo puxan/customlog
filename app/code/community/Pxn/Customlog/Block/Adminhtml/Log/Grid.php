@@ -8,7 +8,7 @@ class Pxn_Customlog_Block_Adminhtml_Log_Grid extends Mage_Adminhtml_Block_Widget
 	 */
 	protected function _prepareCollection ()
 	{
-		$collection = Mage::getModel ('customlog/customlog')->getCollection ()->addFilter ('name', $this->getRequest ()->getParam ('name'));
+		$collection = Mage::getModel ('customlog/customlog')->getCollection ()->addFilter ('name', $this->getRequest ()->getParam ('name'))->setOrder('entity_id', 'DESC');
 		$this->setCollection ($collection);
 
 		parent::_prepareCollection ();
@@ -21,6 +21,12 @@ class Pxn_Customlog_Block_Adminhtml_Log_Grid extends Mage_Adminhtml_Block_Widget
 	 */
 	protected function _prepareColumns ()
 	{
+		$levels = array ();
+		for ($i = 0; $i < Pxn_Customlog_Model_Customlog::NUM_LEVELS; $i ++)
+		{
+			$levels[$i] = Pxn_Customlog_Model_Customlog::getLevelName ($i);
+		}
+		
 		$this->addColumn ('entity_id', array(
 			'header' => $this->_getHelper ()->__ ('ID'),
 			'type' => 'number',
@@ -39,7 +45,8 @@ class Pxn_Customlog_Block_Adminhtml_Log_Grid extends Mage_Adminhtml_Block_Widget
 
 		$this->addColumn ('level', array(
 			'header' => $this->_getHelper ()->__ ('Level'),
-			'type' => 'text',
+			'type' => 'options',
+			'options' => $levels,
 			'width' => '100px',
 			'align' => 'center',
 			'index' => 'level',
