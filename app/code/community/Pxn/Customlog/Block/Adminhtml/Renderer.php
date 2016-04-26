@@ -23,6 +23,12 @@ class Pxn_Customlog_Block_Adminhtml_Renderer extends Mage_Adminhtml_Block_Widget
 			$value = date('Y-m-d H:i:s', $currentTimestamp); 
 		}
 
+		// Render content of the message (to be compatible with XML)
+		if ($this->getColumn ()->getIndex () == 'message')
+		{
+			$value = '<pre>' . htmlspecialchars ($value) . '</pre>';
+		}
+
 		// Apply specific color depending on the level
 		if ($row->getData ('level') == Customlog::ERROR)
 		{
